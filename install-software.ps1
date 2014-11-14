@@ -1,1 +1,2 @@
 choco install lockhunter
+choco install NugetPackageExplorer
