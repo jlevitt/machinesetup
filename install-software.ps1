@@ -3,3 +3,4 @@ choco install NugetPackageExplorer
 choco install pandoc
 choco install hxd
 choco install vim
+choco install haskellplatform
