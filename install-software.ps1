@@ -4,3 +4,4 @@ choco install pandoc
 choco install hxd
 choco install vim
 choco install haskellplatform
+choco install kdiff3
