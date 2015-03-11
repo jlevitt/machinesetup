@@ -12,4 +12,5 @@ choco install ruby.devkit
 gem install httparty
 gem install json-schema
 gem install multi_json
+gem install minitest
 choco install python2
