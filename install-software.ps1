@@ -7,6 +7,7 @@ choco install haskellplatform
 choco install kdiff3
 choco install virtualbox
 choco install vagrant
+choco install conemu
 
 # Used for contractacon
 choco install ruby -Version 1.9.3.55100
