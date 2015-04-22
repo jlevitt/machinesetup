@@ -1,6 +1,6 @@
 [user]
-	name = 
-	email = 
+  name = <NAME>
+  email = <EMAIL>
 [alias]
   co = checkout
   ci = commit
@@ -17,11 +17,10 @@
   save = stash save
   pop = stash pop
 [color]
-    ui = auto
+  ui = auto
 [push]
-	default = simple
+  default = simple
 [core]
-	#editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
-    editor = vim
+  editor = vim
 [credential]
-	helper = cache --timeout=3600
+  helper = cache --timeout=3600
