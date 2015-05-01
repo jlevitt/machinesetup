@@ -58,6 +58,35 @@ function TortoiseGit($command, $path)
 
 Set-Alias tgit TortoiseGit
 
+function ChangeDirProjects
+{
+    cd c:\projects
+}
+
+Set-Alias projects ChangeDirProjects
+
+function ChangeDirDev
+{
+    cd c:\dev
+}
+
+Set-Alias dev ChangeDirDev
+
+function EditProfile
+{
+    notepad++.exe c:\projects\personal\machinesetup\Microsoft.PowerShell_profile.ps1
+}
+
+Set-Alias edit-profile EditProfile
+
+function UpdateProfile
+{
+    cp c:\projects\personal\machinesetup\Microsoft.PowerShell_profile.ps1 $PROFILE
+}
+
+Set-Alias update-profile UpdateProfile
+
 # Load posh-git example profile
 . 'C:\projects\open-source\posh-git\profile.example.ps1'
 
+"New profile copied - Run '. `$PROFILE' to update."
