@@ -47,6 +47,7 @@ function OpenSolutions
 
 Set-Alias sln OpenSolutions
 
+#See possible commands here: https://tortoisegit.org/docs/tortoisegit/tgit-automation.html
 function TortoiseGit($command, $path)
 {
     if (-not $path)
@@ -88,5 +89,3 @@ Set-Alias update-profile UpdateProfile
 
 # Load posh-git example profile
 . 'C:\projects\open-source\posh-git\profile.example.ps1'
-
-"New profile copied - Run '. `$PROFILE' to update."
