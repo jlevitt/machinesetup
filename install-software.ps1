@@ -1,4 +1,5 @@
 choco install devbox-rapidee -y
+choco install tortoisegit -y
 choco install git -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"' -y
 choco install notepadplusplus -y
 choco install pidgin -y
