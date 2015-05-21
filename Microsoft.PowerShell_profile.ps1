@@ -39,7 +39,7 @@ function ShowUnpushedCommits
     git branch |% { $_.Substring(2) } |% { git log origin/$_..$_ }
 }
 
-Set-Alias git-show-unpushed-commits
+Set-Alias git-show-unpushed-commits ShowUnpushedCommits
 
 function KillSite($keep)
 {
