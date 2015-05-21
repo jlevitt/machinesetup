@@ -1,29 +1,29 @@
-choco install devbox-rapidee
-choco install git -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"'
-choco install notepadplusplus
-choco install pidgin
-choco install 7zip.install
-choco install conemu
-choco install vim
-choco install keepass
-choco install lockhunter
-choco install fiddler
-choco install NugetPackageExplorer
-choco install pandoc
-choco install hxd
-choco install kdiff3
-choco install haskellplatform
-choco install virtualbox
-choco install vagrant
-choco install logparser
-choco install mysql
-choco install mysql.workbench
-choco install shexview.portable
-choco install procexp
-choco install putty
-choco install pstools
-choco install windirstat
-choco install winscp
+choco install devbox-rapidee -y
+choco install git -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"' -y
+choco install notepadplusplus -y
+choco install pidgin -y
+choco install 7zip.install -y
+choco install conemu -y
+choco install vim -y
+choco install keepass -y
+choco install lockhunter -y
+choco install fiddler -y
+choco install NugetPackageExplorer -y
+choco install pandoc -y
+choco install hxd -y
+choco install kdiff3 -y
+choco install haskellplatform -y
+choco install virtualbox -y
+choco install vagrant -y
+choco install logparser -y
+choco install mysql -y
+choco install mysql.workbench -y
+choco install shexview.portable -y
+choco install procexp -y
+choco install putty -y
+choco install pstools -y
+choco install windirstat -y
+choco install winscp -y
 
 # Used for contractacon
 choco install ruby -Version 1.9.3.55100
