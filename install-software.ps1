@@ -1,4 +1,5 @@
 choco install devbox-rapidee
+choco install git -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"'
 choco install notepadplusplus
 choco install pidgin
 choco install 7zip.install
@@ -37,7 +38,6 @@ choco install python2
 choco install resharper
 
 # Other
-# * git
 # * TortoiseGit
 # * MSSoap toolkit 3.0
 # * WebServiceStudio
