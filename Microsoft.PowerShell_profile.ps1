@@ -22,6 +22,25 @@ function ViewMergedLocal()
 
 Set-Alias vml ViewMergedLocal
 
+#See possible commands here: https://tortoisegit.org/docs/tortoisegit/tgit-automation.html
+function TortoiseGit($command, $path)
+{
+    if (-not $path)
+    {
+        $path = "."
+    }
+    & "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:$command /path:$path
+}
+
+Set-Alias tgit TortoiseGit
+
+function ShowUnpushedCommits
+{
+    git branch |% { $_.Substring(2) } |% { git log origin/$_..$_ }
+}
+
+Set-Alias git-show-unpushed-commits
+
 function KillSite($keep)
 {
     Get-Process iisexpress |? { -Not $keep.Contains($_.Id) } | Stop-Process
@@ -46,18 +65,6 @@ function OpenSolutions
 }
 
 Set-Alias sln OpenSolutions
-
-#See possible commands here: https://tortoisegit.org/docs/tortoisegit/tgit-automation.html
-function TortoiseGit($command, $path)
-{
-    if (-not $path)
-    {
-        $path = "."
-    }
-    & "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:$command /path:$path
-}
-
-Set-Alias tgit TortoiseGit
 
 function ChangeDirProjects
 {
