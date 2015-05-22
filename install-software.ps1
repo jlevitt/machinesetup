@@ -39,6 +39,9 @@ choco install python2
 # Has non choco dependencies
 choco install resharper
 
+# Non-choco
+(new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+
 # Other
 # * TortoiseGit
 # * MSSoap toolkit 3.0
