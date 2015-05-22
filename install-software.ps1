@@ -6,7 +6,7 @@ choco install pidgin -y
 choco install 7zip.install -y
 choco install conemu -y
 choco install vim -y
-choco install rdcman
+choco install rdcman -y
 choco install keepass -y
 choco install lockhunter -y
 choco install fiddler -y
