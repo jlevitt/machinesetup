@@ -10,6 +10,7 @@ choco install rdcman -y
 choco install keepass -y
 choco install lockhunter -y
 choco install fiddler -y
+choco install NuGet.CommandLine
 choco install NugetPackageExplorer -y
 choco install pandoc -y
 choco install hxd -y
