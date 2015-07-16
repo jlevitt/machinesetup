@@ -41,6 +41,13 @@ function ShowUnpushedCommits
 
 Set-Alias git-show-unpushed-commits ShowUnpushedCommits
 
+function ShowDeletions($rangeSpecification)
+{
+	git log $rangeSpecification --shortstat | sls "([\d]+) deletions" |% { $_.Matches } |% { $_.groups[1].value } | Measure-Object -Sum
+}
+
+Set-Alias git-deletions ShowDeletions
+
 function KillSite($keep)
 {
     Get-Process iisexpress |? { -Not $keep.Contains($_.Id) } | Stop-Process
