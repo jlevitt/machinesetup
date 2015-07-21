@@ -48,6 +48,13 @@ function ShowDeletions($rangeSpecification)
 
 Set-Alias git-deletions ShowDeletions
 
+function GitChangeLog($rangeSpecification)
+{
+	git log --merges --grep="pull request" --pretty=format:'%C(yellow)%h%Creset - %s%n  %an %Cgreen(%cr)%C(bold blue)%d%Creset%n' $rangeSpecification
+}
+
+Set-Alias git-cl GitChangeLog
+
 function KillSite($keep)
 {
     Get-Process iisexpress |? { -Not $keep.Contains($_.Id) } | Stop-Process
