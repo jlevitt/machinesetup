@@ -108,5 +108,12 @@ function UpdateProfile
 
 Set-Alias update-profile UpdateProfile
 
+function RunJavaScriptTests($directory)
+{
+    C:\projects\cp3\packages\Chutzpah.3.2.4\tools\chutzpah.console.exe $directory
+}
+
+Set-Alias jstest RunJavaScriptTests
+
 # Load posh-git example profile
 . 'C:\projects\open-source\posh-git\profile.example.ps1'
