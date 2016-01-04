@@ -1,4 +1,8 @@
 Set-Location C:\projects
+Remove-Variable -Force HOME
+Set-Variable HOME "C:\Users\jake.levitt"
+$env:HOMEDRIVE="C:"
+$env:HOMEPATH="\Users\jake.levitt"
 
 ##### Git helpers
 function Grepout($pattern)
