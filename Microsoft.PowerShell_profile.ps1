@@ -84,6 +84,13 @@ function OpenSolutions
 
 Set-Alias sln OpenSolutions
 
+function OpenNunit
+{
+    . $(gci *tools*\NUnit\nunit-x86.exe)
+}
+
+Set-Alias nunit OpenNunit
+
 function ChangeDirProjects
 {
     cd c:\projects
@@ -121,3 +128,5 @@ Set-Alias jstest RunJavaScriptTests
 
 # Load posh-git example profile
 . 'C:\projects\open-source\posh-git\profile.example.ps1'
+
+New-Alias which get-command
