@@ -27,6 +27,7 @@ choco install putty -y
 choco install pstools -y
 choco install windirstat -y
 choco install winscp -y
+choco install wireshark -y
 
 # Used for contractacon
 choco install ruby -Version 1.9.3.55100
