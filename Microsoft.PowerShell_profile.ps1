@@ -3,6 +3,9 @@ Remove-Variable -Force HOME
 Set-Variable HOME "C:\Users\jake.levitt"
 $env:HOMEDRIVE="C:"
 $env:HOMEPATH="\Users\jake.levitt"
+$env:PSModulePath += ";C:\projects\cicd-scripts\Modules"
+Import-Module Orchestration
+Set-OrchestrationUser jlevitt
 
 ##### Git helpers
 function Grepout($pattern)
@@ -84,9 +87,9 @@ function OpenSolutions
 
 Set-Alias sln OpenSolutions
 
-function OpenNunit
+function OpenNunit($dll)
 {
-    . $(gci *tools*\NUnit\nunit-x86.exe)
+    . $(gci *tools*\NUnit\nunit-x86.exe) $dll
 }
 
 Set-Alias nunit OpenNunit
@@ -125,6 +128,14 @@ function RunJavaScriptTests($directory)
 }
 
 Set-Alias jstest RunJavaScriptTests
+
+function Shutdown-ExcedentCom
+{
+    $comAdmin = New-Object -com ("COMAdmin.COMAdminCatalog.1")
+    $comAdmin.ShutdownApplication("Excedent")
+}
+
+Set-Alias killcom Shutdown-ExcedentCom
 
 # Load posh-git example profile
 . 'C:\projects\open-source\posh-git\profile.example.ps1'
