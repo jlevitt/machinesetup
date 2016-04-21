@@ -87,8 +87,14 @@ function OpenSolutions
 
 Set-Alias sln OpenSolutions
 
-function OpenNunit($dll)
+function OpenNunit($path)
 {
+	$dll = $path
+	if (-not $path.EndsWith(".dll"))
+	{
+		$dll = Join-Path $path "bin\debug\$path.dll" -Resolve
+	}
+
     . $(gci *tools*\NUnit\nunit-x86.exe) $dll
 }
 
@@ -110,7 +116,7 @@ Set-Alias dev ChangeDirDev
 
 function EditProfile
 {
-    notepad++.exe c:\projects\personal\machinesetup\Microsoft.PowerShell_profile.ps1
+    gvim c:\projects\personal\machinesetup\Microsoft.PowerShell_profile.ps1
 }
 
 Set-Alias edit-profile EditProfile
