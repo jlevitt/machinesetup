@@ -17,7 +17,7 @@ Set-Alias grout Grepout
 
 function DeleteMergedLocal()
 {
-    git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d
+    git branch --merged | grep -v "\*" | grep -v "master" |% { git branch -d $_.Trim() }
 }
 
 Set-Alias dml DeleteMergedLocal
@@ -92,7 +92,8 @@ function OpenNunit($path)
 	$dll = $path
 	if (-not $path.EndsWith(".dll"))
 	{
-		$dll = Join-Path $path "bin\debug\$path.dll" -Resolve
+		$dllName = $path | Split-Path -Leaf
+		$dll = Join-Path $path "bin\debug\$dllName.dll" -Resolve
 	}
 
     . $(gci *tools*\NUnit\nunit-x86.exe) $dll
