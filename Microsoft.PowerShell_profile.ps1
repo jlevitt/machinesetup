@@ -4,8 +4,6 @@ Set-Variable HOME "C:\Users\jake.levitt"
 $env:HOMEDRIVE="C:"
 $env:HOMEPATH="\Users\jake.levitt"
 $env:PSModulePath += ";C:\projects\cicd-scripts\Modules"
-Import-Module Orchestration
-Set-OrchestrationUser jlevitt
 
 ##### Git helpers
 function Grepout($pattern)
@@ -87,14 +85,26 @@ function OpenSolutions
 
 Set-Alias sln OpenSolutions
 
+function OpenAtom
+{
+    atom .
+}
+
+Set-Alias atm OpenAtom
+
 function OpenNunit($path)
 {
-	$dll = $path
-	if (-not $path.EndsWith(".dll"))
-	{
-		$dllName = $path | Split-Path -Leaf
-		$dll = Join-Path $path "bin\debug\$dllName.dll" -Resolve
-	}
+    $dll = $path
+    $dllName = $path | Split-Path -Leaf
+    if (-not $path.EndsWith(".dll"))
+    {
+	$dll = Join-Path $path "bin\debug\$dllName.dll" -Resolve -ErrorAction SilentlyContinue
+    }
+
+    if (-not $dll)
+    {
+	$dll = Join-Path $path "bin\Development\$dllName.dll" -Resolve -ErrorAction SilentlyContinue
+    }
 
     . $(gci *tools*\NUnit\nunit-x86.exe) $dll
 }
@@ -108,12 +118,40 @@ function ChangeDirProjects
 
 Set-Alias projects ChangeDirProjects
 
+function ChangeDirAppsBilling
+{
+    cd c:\projects\apps-billing
+}
+
+Set-Alias apps-billing ChangeDirAppsBilling
+
+function ChangeDirCP3
+{
+    cd c:\projects\cp3
+}
+
+Set-Alias cp3 ChangeDirCP3
+
+function ChangeDirUsage
+{
+    cd c:\projects\usage
+}
+
+Set-Alias usage ChangeDirUsage
+
 function ChangeDirDev
 {
     cd c:\dev
 }
 
 Set-Alias dev ChangeDirDev
+
+function ChangeDirSql
+{
+    cd c:\projects\sql\schema
+}
+
+Set-Alias sql ChangeDirSql
 
 function EditProfile
 {
@@ -148,3 +186,11 @@ Set-Alias killcom Shutdown-ExcedentCom
 . 'C:\projects\open-source\posh-git\profile.example.ps1'
 
 New-Alias which get-command
+
+function UseOrchestration
+{
+    Import-Module Orchestration
+    Set-OrchestrationUser jlevitt
+}
+
+New-Alias Use-Orchestration UseOrchestration
