@@ -5,7 +5,6 @@ colorscheme hybrid
 Plugin 'Syntastic'
 Plugin 'justinmk/vim-gtfo'
 Plugin 'Persistent13/vim-ps1'
-Plugin 'yegappan/mru'
 
 " enable powershell syntax plug
 autocmd BufNewFile,BufReadPost *.ps1 set filetype=ps1
