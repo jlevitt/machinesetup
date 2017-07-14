@@ -30,11 +30,16 @@ nnoremap <C-j> :join<CR>
 nnoremap <C-f> :let @/ = @"<CR>|  " Find yanked text
 set pastetoggle=<F2>
 
-" Vim Settings
+" Vim settings
 set clipboard=unnamed
+set hidden|     " Let user switch away from buffers with unsaved changes
+set hlsearch    " Highlight search term matches
+
+" Display settings
 set number
 set guifont=Consolas:h11:cANSI| " Fix molokai italics/gui only
 colorscheme molokai
+set cursorline
 
 " Spacing and tabbing
 set smarttab
