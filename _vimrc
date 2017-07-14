@@ -33,6 +33,7 @@ nnoremap J :tabprevious<CR>
 nnoremap K :tabnext<CR>
 nnoremap <C-j> :join<CR>
 nnoremap <C-f> :let @/ = @"<CR>|  " Find yanked text
+set pastetoggle=<F2>
 
 " Vim Settings
 set clipboard=unnamed
@@ -58,13 +59,9 @@ autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=50
 
-
-"autocmd BufEnter * silent! lcd %:p:h
-"autocmd Filetype javascript setlocal ts=4 sts=4 sw=4   
-"autocmd Filetype ps1 setlocal ts=4 sw=4 expandtab smartindent
-"autocmd Filetype haskell setlocal softtabstop=4 shiftwidth=4 expandtab
-"au FocusLost,TabLeave * call feedkeys("\<C-\>\<C-n>")
-"set pastetoggle=<F2>
+" Autocmd utilities
+autocmd BufEnter * silent! lcd %:p:h|                           " cd to opened file location
+autocmd FocusLost,TabLeave * call feedkeys("\<C-\>\<C-n>")|     " Normal mode on focus lost
 "
 "Start Ctrl P in MRU mode
 "let g:ctrlp_map='<c-p>'
