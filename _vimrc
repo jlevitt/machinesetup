@@ -1,16 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'txt.vim'
 "Plugin 'Syntastic'
 "Plugin 'justinmk/vim-gtfo'
 Plugin 'scrooloose/nerdtree'
@@ -50,6 +49,9 @@ set shiftwidth=4
 set textwidth=100
 set nowrap
    
+" Filetypes
+autocmd BufRead,BufNewFile * setfiletype txt
+
 " NerdTree Settings
 autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
 autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
@@ -57,9 +59,6 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=50
 
 
-"set softtabstop=4
-""set shiftwidth=4
-""set expandtab
 "autocmd BufEnter * silent! lcd %:p:h
 "autocmd Filetype javascript setlocal ts=4 sts=4 sw=4   
 "autocmd Filetype ps1 setlocal ts=4 sw=4 expandtab smartindent
