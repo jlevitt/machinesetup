@@ -31,6 +31,7 @@ choco install pstools -y
 choco install windirstat -y
 choco install winscp -y
 choco install wireshark -y
+choco install xsltproc -y  # Used to format xml in vim
 
 # Used for contractacon
 choco install ruby -Version 1.9.3.55100
